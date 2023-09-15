@@ -149,5 +149,37 @@ INSERT INTO Universities_Info VALUES(1, 'Indian Institute of Technology Bombay',
 (18, 'Savitribai Phule Pune University', 'Pune north Maharashtra', 'https://www.unipune.ac.in', 1948, 20000, 1700, 12000.00, TRUE, 18, 'Accredited', 'unipune@example.com', '+9123456785', 'Ganeshkhind, Pune, Maharashtra'),
 (19, 'Indian Statistical Institute Delhi', 'New Delhi north Delhi', 'https://www.isid.ac.in', 1974, 6000, 500, 14000.00, TRUE, 19, 'Accredited', 'isid@example.com', '+9112345675', '7 S.J.S. Sansanwal Marg, New Delhi, Delhi'),
 (20, 'Indian Institute of Technology Bhubaneswar', 'Bhubaneswar Odisha', 'https://www.iitbbs.ac.in', 2008, 7000, 600, 15000.00, TRUE, 20, 'Accredited', 'iitbbs@example.com', '+9187654320', 'Argul, Bhubaneswar, Odisha');
- 
+
+create database Weather_Report;
+create table weather_info(id int,temp int,place varchar(50),state varchar(60),humidity float); 
+insert into weather_info values(1, 31, 'Hyderabad', 'Telangana', 78.1),
+(2, 35, 'Delhi', 'Delhi NCR', 80.2),
+    (3, 28, 'Bangalore', 'Karnataka', 65.0),
+    (4, 32, 'Chennai', 'Tamil Nadu', 82.3),
+    (5, 29, 'Kolkata', 'West Bengal', 70.8);
+select * from weather_info;
+create table loaction_info(id INT PRIMARY KEY,name VARCHAR(255),city VARCHAR(255),state varchar(50),village VARCHAR(255));
+insert into loaction_info values
+(1, 'Agripada', 'Mumbai', 'Maharashtra', 'Agripada'),
+    (2, 'westRoad', 'Delhi', 'Delhi', 'mangos'),
+    (3, 'Rajajinagar', 'Bangalore', 'Karnataka', 'hosahalli'),
+    (4, 'AnnaNagar', 'Chennai', 'Tamil Nadu', 'chakos'),
+    (5, 'Rabindra Sadan', 'Kolkata', 'West Bengal', ' Gobindapu'),
+    (6, 'Secunderabad', 'Hyderabad', 'Telangana', 'Asif Nagar');
+    
+    SELECT * FROM weather_info INNER JOIN loaction_info ON weather_info.place = loaction_info.city;
+    SELECT * FROM weather_info LEFT JOIN loaction_info ON weather_info.place = loaction_info.city;
+    SELECT * FROM weather_info RIGHT JOIN loaction_info ON weather_info.place = loaction_info.city
+    
+
+
+
+
+
+
+drop table loaction_info;
+
+drop table weather_info;
+
+
  
